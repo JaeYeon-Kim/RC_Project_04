@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/main_frame"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_Layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/mainTitle"
+                    android:layout_width="130dp"
+                    android:layout_height="70dp"
+                    android:paddingTop="20dp"
+                    android:src="@drawable/main_logo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <GridLayout
+                    android:id="@+id/gridLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="270dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:columnCount="4"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/mainTitle">
+
+                    <Button
+                        android:id="@+id/button_premium"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="fill_vertical"
+                        android:background="#00FF0000"
+                        android:drawableTop="@drawable/button_premium"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="bottom"
+                        android:paddingVertical="10dp"
+                        android:text="프리미엄블랙"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/button_motel"
+                        android:layout_width="100dp"
+                        android:layout_height="90dp"
+                        android:layout_gravity="fill_vertical"
+                        android:background="#00FF0000"
+                        android:drawableTop="@drawable/button_motel"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:text="모텔"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/button_hotel"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:background="#00FF0000"
+                        android:drawableTop="@drawable/button_hotel"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:text="호텔・리조트"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/button_pension"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="fill_vertical"
+                        android:background="#00FF0000"
+                        android:drawableTop="@drawable/button_pension"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:text="펜션・풀빌라"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/button_home"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="fill_vertical"
+                        android:background="#00FF0000"
+                        android:drawableTop="@drawable/button_home"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:text="홈&amp;빌라"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/button_camp"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:background="#00FF0000"
+                        android:drawableTop="@drawable/button_camp"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:text="캠핑・글램핑"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/button_guesthouse"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="fill_vertical"
+                        android:background="#00FF0000"
+                        android:drawableTop="@drawable/button_guesthouse"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:text="게하・한옥"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/button_replace"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="fill_vertical"
+                        android:background="#00FF0000"
+                        android:drawableTop="@drawable/button_replace"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:text="공간대여"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/button_airport"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="fill_vertical"
+                        android:background="#00FF0000"
+                        android:drawableTop="@drawable/button_plane"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:text="국내 항공"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/button_rentCar"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="fill_vertical"
+                        android:background="#00FF0000"
+                        android:drawableTop="@drawable/button_rent"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:text="렌터카"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/button_ticket"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="fill_vertical"
+                        android:background="#00FF0000"
+                        android:drawableTop="@drawable/button_ticket"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:text="레저・티켓"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
+
+                    <Button
+                        android:id="@+id/button_restaurant"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="fill_vertical"
+                        android:background="#00FF0000"
+                        android:drawableTop="@drawable/button_restaurant"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:text="맛집"
+                        android:textColor="@color/black"
+                        android:textSize="11sp" />
+                </GridLayout>
+
+                <ImageView
+                    android:id="@+id/new_bar"
+                    android:layout_width="380dp"
+                    android:layout_height="30dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:src="@drawable/new_bar_update"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/gridLayout"
+                    tools:ignore="ContentDescription" />
+
+                <Button
+                    android:id="@+id/button_foreignAirport"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:background="#00FF0000"
+                    android:drawableTop="@drawable/button_foreign"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:text="해외 항공"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toTopOf="@id/viewPager"
+                    app:layout_constraintStart_toStartOf="@id/gridLayout"
+                    app:layout_constraintTop_toBottomOf="@id/new_bar" />
+
+                <Button
+                    android:id="@+id/button_overseas_hotel"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:background="#00FF0000"
+                    android:drawableTop="@drawable/button_overseas_hotel"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:text="해외 숙소"
+                    android:textColor="@color/black"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toTopOf="@id/viewPager"
+                    app:layout_constraintStart_toEndOf="@id/button_foreignAirport"
+                    app:layout_constraintTop_toBottomOf="@id/new_bar" />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/button_overseas_hotel" />
+
+                <LinearLayout
+                    android:id="@+id/middle_btn_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:orientation="horizontal"
+                    android:paddingVertical="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewPager">
+
+                    <android.widget.Button
+                        android:id="@+id/coupon_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/middle_custom_button"
+                        android:drawableLeft="@drawable/coupon_button"
+                        android:drawablePadding="-28dp"
+                        android:fontFamily="@font/jalnanotf"
+                        android:gravity="center"
+                        android:outlineProvider="none"
+                        android:paddingLeft="25dp"
+                        android:text="쿠폰"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <android.widget.Button
+                        android:id="@+id/challenge_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/middle_custom_button"
+                        android:drawableLeft="@drawable/lottery_button"
+                        android:drawablePadding="-15dp"
+                        android:fontFamily="@font/jalnanotf"
+                        android:gravity="center"
+                        android:outlineProvider="none"
+                        android:paddingLeft="10dp"
+                        android:text="도전룰렛"
+                        android:textSize="16sp" />
+
+                    <android.widget.Button
+                        android:id="@+id/event_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/middle_custom_button"
+                        android:drawableLeft="@drawable/event_button"
+                        android:drawablePadding="-18dp"
+                        android:fontFamily="@font/jalnanotf"
+                        android:gravity="center"
+                        android:outlineProvider="none"
+                        android:paddingLeft="20dp"
+                        android:text="이벤트"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/join_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/middle_btn_layout">
+
+                    <ImageButton
+                        android:id="@+id/join_want_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="160dp"
+                        android:background="@drawable/join_button" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:id="@+id/hot_popular_pension_title"
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/mainTitle_1"
+                        android:text="오늘의 체크인"
+                        android:textColor="#0F73E6"
+                        android:fontFamily="@font/jalnanotf"
+                        android:textSize="20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/mainTitle_2"
+                        android:text="특가 호텔"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:layout_marginStart="5dp"
+                        android:fontFamily="@font/jalnanotf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:itemIconTint="@drawable/menu_selector_icon"
+        app:itemTextColor="@drawable/menu_selector_text"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/here_bottom_menu" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
