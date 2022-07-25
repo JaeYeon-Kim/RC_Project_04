@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -20,8 +19,9 @@
         <ScrollView
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:fillViewport="true"
+            android:overScrollMode="never"
             android:scrollbars="none">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -37,7 +37,8 @@
                     android:src="@drawable/main_logo"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="ContentDescription" />
 
                 <GridLayout
                     android:id="@+id/gridLayout"
@@ -248,6 +249,7 @@
                     android:layout_marginHorizontal="10dp"
                     android:orientation="horizontal"
                     android:paddingVertical="20dp"
+                    app:layout_constraintBottom_toTopOf="@id/join_layout"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/viewPager">
@@ -306,7 +308,7 @@
                     android:id="@+id/join_layout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    app:layout_constraintBottom_toTopOf="@id/today_checkIn_title"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/middle_btn_layout">
@@ -320,35 +322,165 @@
                 </LinearLayout>
 
                 <LinearLayout
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:id="@+id/hot_popular_pension_title"
+                    android:id="@+id/today_checkIn_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
                     android:orientation="horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    app:layout_constraintBottom_toTopOf="@id/checkIn_rv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/join_layout">
 
                     <TextView
-                        android:id="@+id/mainTitle_1"
+                        android:id="@+id/checkIn_title_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/jalnanotf"
                         android:text="오늘의 체크인"
                         android:textColor="#0F73E6"
-                        android:fontFamily="@font/jalnanotf"
-                        android:textSize="20sp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:textSize="20sp" />
 
                     <TextView
-                        android:id="@+id/mainTitle_2"
-                        android:text="특가 호텔"
-                        android:textColor="@color/black"
-                        android:textSize="20sp"
+                        android:id="@+id/checkIn_title_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:fontFamily="@font/jalnanotf"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:text="특가 호텔"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
                 </LinearLayout>
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/checkIn_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toTopOf="@id/discountHotel_add_btn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/today_checkIn_title" />
+
+                <android.widget.Button
+                    android:id="@+id/discountHotel_add_btn"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/add_button_custom"
+                    android:bufferType="spannable"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:drawablePadding="-10dp"
+                    android:drawableTint="#1772DF"
+                    android:gravity="center"
+                    android:outlineProvider="none"
+                    android:paddingRight="15dp"
+                    android:text="특가 호텔 더보기"
+                    app:layout_constraintBottom_toTopOf="@id/weekend_hot_pension_title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/checkIn_rv"></android.widget.Button>
+
+                <LinearLayout
+                    android:id="@+id/weekend_hot_pension_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/discountHotel_add_btn">
+
+                    <TextView
+                        android:id="@+id/week_title_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/jalnanotf"
+                        android:text="이번 주 HOT"
+                        android:textColor="#0F73E6"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/week_title_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:fontFamily="@font/jalnanotf"
+                        android:text="인기 펜"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/weekend_hot_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintBottom_toTopOf="@id/weekend_hotPension_add_btn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/weekend_hot_pension_title" />
+
+                <android.widget.Button
+                    android:id="@+id/weekend_hotPension_add_btn"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/add_button_custom"
+                    android:bufferType="spannable"
+                    android:drawableRight="@drawable/right_arrow"
+                    android:drawablePadding="-10dp"
+                    android:drawableTint="#1772DF"
+                    android:gravity="center"
+                    android:outlineProvider="none"
+                    android:paddingRight="15dp"
+                    android:text="인기 펜션 더보기"
+                    app:layout_constraintBottom_toTopOf="@id/entire_theme_layout"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/weekend_hot_rv" />
+
+                <LinearLayout
+                    android:id="@+id/entire_theme_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/weekend_hotPension_add_btn">
+
+                    <LinearLayout
+                        android:id="@+id/theme_recommend_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" >
 
 
+                        <TextView
+                            android:id="@+id/theme_title_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jalnanotf"
+                            android:text="이번 주 HOT"
+                            android:textColor="#0F73E6"
+                            android:textSize="20sp" />
 
+                        <TextView
+                            android:id="@+id/theme_title_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:fontFamily="@font/jalnanotf"
+                            android:text="인기 펜"
+                            android:textColor="@color/black"
+                            android:textSize="20sp" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

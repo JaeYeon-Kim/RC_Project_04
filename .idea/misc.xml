@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/add_button_custom.xml" value="0.1395" />
         <entry key="app/src/main/res/drawable/home_selector.xml" value="0.194" />
         <entry key="app/src/main/res/drawable/like_selector.xml" value="0.194" />
         <entry key="app/src/main/res/drawable/location_selector.xml" value="0.194" />
