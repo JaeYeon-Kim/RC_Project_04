@@ -237,7 +237,7 @@
                 <androidx.viewpager2.widget.ViewPager2
                     android:id="@+id/viewPager"
                     android:layout_width="match_parent"
-                    android:layout_height="130dp"
+                    android:layout_height="180dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/button_overseas_hotel" />
@@ -358,6 +358,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
                     app:layout_constraintBottom_toTopOf="@id/discountHotel_add_btn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -366,11 +368,11 @@
                 <android.widget.Button
                     android:id="@+id/discountHotel_add_btn"
                     android:layout_width="150dp"
-                    android:layout_height="40dp"
+                    android:layout_height="30dp"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/add_button_custom"
                     android:bufferType="spannable"
-                    android:drawableRight="@drawable/right_arrow"
+                    android:drawableRight="@drawable/right_arrow_button"
                     android:drawablePadding="-10dp"
                     android:drawableTint="#1772DF"
                     android:gravity="center"
@@ -380,7 +382,9 @@
                     app:layout_constraintBottom_toTopOf="@id/weekend_hot_pension_title"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/checkIn_rv"></android.widget.Button>
+                    app:layout_constraintTop_toBottomOf="@id/checkIn_rv">
+
+                </android.widget.Button>
 
                 <LinearLayout
                     android:id="@+id/weekend_hot_pension_title"
@@ -408,7 +412,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="5dp"
                         android:fontFamily="@font/jalnanotf"
-                        android:text="인기 펜"
+                        android:text="인기 펜션"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
                 </LinearLayout>
@@ -418,6 +422,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
+                    android:overScrollMode="never"
+                    android:scrollbars="none"
                     app:layout_constraintBottom_toTopOf="@id/weekend_hotPension_add_btn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -430,7 +436,7 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/add_button_custom"
                     android:bufferType="spannable"
-                    android:drawableRight="@drawable/right_arrow"
+                    android:drawableRight="@drawable/right_arrow_button"
                     android:drawablePadding="-10dp"
                     android:drawableTint="#1772DF"
                     android:gravity="center"
@@ -445,7 +451,9 @@
                 <LinearLayout
                     android:id="@+id/entire_theme_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#FBFAFA"
                     android:orientation="vertical"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -453,18 +461,19 @@
 
                     <LinearLayout
                         android:id="@+id/theme_recommend_title"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" >
-
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp">
 
                         <TextView
                             android:id="@+id/theme_title_1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/jalnanotf"
-                            android:text="이번 주 HOT"
+                            android:text="테마가 있는"
                             android:textColor="#0F73E6"
-                            android:textSize="20sp" />
+                            android:textSize="18sp" />
 
                         <TextView
                             android:id="@+id/theme_title_2"
@@ -472,15 +481,231 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:fontFamily="@font/jalnanotf"
-                            android:text="인기 펜"
+                            android:text="추천여행"
                             android:textColor="@color/black"
-                            android:textSize="20sp" />
+                            android:textSize="18sp" />
 
 
                     </LinearLayout>
 
+                    <HorizontalScrollView
+                        android:id="@+id/horizontal_sv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginHorizontal="20dp"
+                        android:layout_marginTop="10dp"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <android.widget.Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:background="#00FF0000"
+                                android:drawableTop="@drawable/horizontal_button_1"
+                                android:drawablePadding="-20dp"
+                                android:foreground="?android:attr/selectableItemBackground"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="지금, 여기"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+
+                            <android.widget.Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="5dp"
+                                android:background="#00FF0000"
+                                android:drawableTop="@drawable/horizontal_button_2"
+                                android:drawablePadding="-20dp"
+                                android:foreground="?android:attr/selectableItemBackground"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="물놀이 숙소"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+
+                            <android.widget.Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="5dp"
+                                android:background="#00FF0000"
+                                android:drawableTop="@drawable/horizontal_button_3"
+                                android:drawablePadding="-20dp"
+                                android:foreground="?android:attr/selectableItemBackground"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="강원여행"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+
+                            <android.widget.Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="5dp"
+                                android:background="#00FF0000"
+                                android:drawableTop="@drawable/horizontal_button_4"
+                                android:drawablePadding="-20dp"
+                                android:foreground="?android:attr/selectableItemBackground"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="제주여행"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+
+                            <android.widget.Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="5dp"
+                                android:background="#00FF0000"
+                                android:drawableTop="@drawable/horizontal_button_5"
+                                android:drawablePadding="-20dp"
+                                android:foreground="?android:attr/selectableItemBackground"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="경주여행"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+
+                            <android.widget.Button
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="5dp"
+                                android:background="#00FF0000"
+                                android:drawableTop="@drawable/horizontal_button_6"
+                                android:drawablePadding="-20dp"
+                                android:foreground="?android:attr/selectableItemBackground"
+                                android:gravity="center_vertical|center_horizontal"
+                                android:text="반려견이랑"
+                                android:textColor="@color/black"
+                                android:textSize="15sp" />
+
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tasty_title_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintBottom_toTopOf="@id/tasty_image_layout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/entire_theme_layout">
+
+                    <TextView
+                        android:id="@+id/tasty_title_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/jalnanotf"
+                        android:text="취향대로"
+                        android:textColor="#0F73E6"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/tasty_title_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:fontFamily="@font/jalnanotf"
+                        android:text="맛집어때?"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
 
                 </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/tasty_image_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="10dp"
+                    android:layout_marginVertical="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tasty_title_layout">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/tasty_cv_1"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:background="#FBFDFD"
+                        app:cardCornerRadius="16dp"
+                        app:layout_constraintEnd_toStartOf="@id/tasty_cv_2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/cv_image_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/tasty_image_1"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintBottom_toTopOf="@id/cv_image_title_1"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/cv_image_title_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="뷔페할인은 여기어때"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/cv_image_1" />
+
+                            <ImageView
+                                android:id="@+id/cv_image_arrow_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/right_arrow_button"
+                                app:tint="#9A9999" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/tasty_cv_2"
+                        app:cardCornerRadius="16dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        app:layout_constraintStart_toEndOf="@id/tasty_cv_1"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+                        <ImageView
+                            android:id="@+id/cv_image_2"
+                            android:background="@drawable/tasty_image_2"
+                            android:scaleType="centerCrop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+
+
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/tasty_cv_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/tasty_cv_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
