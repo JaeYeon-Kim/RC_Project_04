@@ -415,6 +415,17 @@
                         android:text="인기 펜션"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
+
+                    <Button
+                        android:id="@+id/add_pension_btn"
+                        android:backgroundTint="#F25858"
+                        android:text="펜션 추가"
+                        android:layout_marginStart="70dp"
+                        android:layout_gravity="top"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"/>
                 </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView

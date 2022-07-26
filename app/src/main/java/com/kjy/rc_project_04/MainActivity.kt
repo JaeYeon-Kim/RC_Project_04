@@ -10,8 +10,10 @@ import android.text.Spanned
 import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.view.Menu
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.kjy.rc_project_04.databinding.ActivityMainBinding
+import com.kjy.rc_project_04.databinding.DialogCustomBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,8 +21,11 @@ class MainActivity : AppCompatActivity() {
         ActivityMainBinding.inflate(layoutInflater)
     }
 
+    private val context = this
+
     private val hotelList = mutableListOf<CheckData>()
 
+    private val pensionList: MutableList<WeekendData> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +45,24 @@ class MainActivity : AppCompatActivity() {
 
         // 펜션 리사이클러뷰 불러오기 함수
          pensionRecycler()
+
+        // 펜션추가하기(커스텀 다이얼로그)
+        binding.addPensionBtn.setOnClickListener {
+            val dialog = CustomDialog(this)
+            dialog.showDialog()
+            dialog.setOnClickListener(object: CustomDialog.ButtonClickListener{
+                @SuppressLint("NotifyDataSetChanged")
+                override fun onClick(titleText: String, priceText: String) {
+                    val informPension = WeekendData(R.drawable.add_pension_image_1, titleText, "9.0",
+                                                    priceText, "원")
+                    pensionList.add(informPension)
+                    binding.weekendHotRv.adapter?.notifyDataSetChanged()
+                    Toast.makeText(context, "펜션이 추가되었습니다!!", Toast.LENGTH_SHORT).show()
+                }
+
+
+            })
+        }
 
     }
 
@@ -146,7 +169,7 @@ class MainActivity : AppCompatActivity() {
     private fun pensionRecycler() {
         var adapter = CustomHotAdapter(this)
         binding.weekendHotRv.adapter = adapter
-        val pensionList: MutableList<WeekendData> = mutableListOf()
+
 
         // 각 이미지 텍스트들 리스트에 넣어주기
         pensionList.apply{
@@ -175,10 +198,7 @@ class MainActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this)
         layoutManager.orientation = LinearLayoutManager.HORIZONTAL
         binding.weekendHotRv.layoutManager = layoutManager
-        adapter.notifyDataSetChanged()
 
     }
-
-
 
 }
