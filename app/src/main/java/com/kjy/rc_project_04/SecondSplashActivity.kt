@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import splitties.activities.start
 
 class SecondSplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,8 +13,8 @@ class SecondSplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_second_splash)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
+            start<MainActivity>()
+            overridePendingTransition(R.anim.slide_right_enter, R.anim.slide_right_exit)
             finish()
         },1000)
 

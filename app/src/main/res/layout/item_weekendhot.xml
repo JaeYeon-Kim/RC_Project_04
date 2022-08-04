@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
-    android:layout_marginHorizontal="10dp"
-    android:layout_marginVertical="10dp"
-    app:cardCornerRadius="16dp"
+    android:id="@+id/main_pension_view"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="300dp"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="0.5dp"
+    app:strokeColor="#E2F5F5F5"
+    app:strokeWidth="4dp"
+    android:layout_gravity="end"
+    android:layout_marginStart="10dp"
+    android:layout_width="260dp"
+    android:layout_height="300dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginVertical="10dp"
+    app:cardCornerRadius="8dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -15,7 +21,7 @@
         <ImageView
             android:id="@+id/pension_MainImage"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="160dp"
             android:background="@drawable/rating_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -25,26 +31,26 @@
             android:id="@+id/pension_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
             android:ellipsize="end"
             android:maxLines="1"
             android:text="홍천 푸름펜션"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/pension_MainImage"/>
+            app:layout_constraintTop_toBottomOf="@id/pension_MainImage" />
 
         <ImageView
             android:id="@+id/pension_score_image"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:layout_marginTop="5dp"
             android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
             android:src="@drawable/rating_image"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/pension_title"/>
+            app:layout_constraintTop_toBottomOf="@id/pension_title" />
 
         <TextView
             android:id="@+id/pension_scoreText"
@@ -63,14 +69,13 @@
             android:id="@+id/priceText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="100dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
             android:text="299,000"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/pension_title"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/pension_title"
             app:layout_constraintTop_toBottomOf="@id/pension_score_image" />
 
         <TextView
@@ -80,7 +85,7 @@
             android:layout_marginStart="5dp"
             android:text="원"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="@id/priceText"
             app:layout_constraintStart_toEndOf="@id/priceText"
             app:layout_constraintTop_toTopOf="@id/priceText" />

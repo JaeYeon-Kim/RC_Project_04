@@ -47,4 +47,23 @@ dependencies {
 
     // Glide 라이브러리
     implementation 'com.github.bumptech.glide:glide:4.13.2'
+
+    // 로티 애니메이션
+    implementation 'com.airbnb.android:lottie:5.2.0'
+
+    // anko 라이브러리 대체 Splitties 라이브러리 의존성 추가 (토스트, 뷰 , 인텐트 등)
+    implementation("com.louiscad.splitties:splitties-fun-pack-android-base:3.0.0")
+
+    // viewAnimation 라이브러리 추가
+    implementation 'com.daimajia.androidanimations:library:2.4@aar'
+
+    // awesome ui flat button
+    implementation 'info.hoang8f:fbutton:1.0.5'
+
+    // Picasso 라이브러리(Glide와 동일하게 이미지를 로딩할 때 사용함)
+    implementation 'com.squareup.picasso:picasso:2.8'
+
+    // Shimmer for Android(deprecated)
+    implementation 'com.romainpiel.shimmer:library:1.4.0@aar'
+
 }

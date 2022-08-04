@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.kjy.rc_project_04.databinding.ItemWeekendhotBinding
+import splitties.toast.toast
 
 class CustomHotAdapter(context: Context): RecyclerView.Adapter<CustomHotAdapter.CustomWeekendHolder>() {
 
@@ -26,6 +27,7 @@ class CustomHotAdapter(context: Context): RecyclerView.Adapter<CustomHotAdapter.
             binding.priceText.text = weekendData.priceText
             binding.defaultWonText.text = weekendData.wonText
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomWeekendHolder {
@@ -36,6 +38,12 @@ class CustomHotAdapter(context: Context): RecyclerView.Adapter<CustomHotAdapter.
 
     override fun onBindViewHolder(holder: CustomWeekendHolder, position: Int) {
         val weekendData = pensionList[position]
+        holder.binding.mainPensionView.setOnLongClickListener {
+            pensionList.removeAt(position)
+            notifyItemRemoved(position)
+            toast("해당 펜션이 삭제되었습니다.")
+            true
+        }
         holder.setHot(weekendData)
     }
 

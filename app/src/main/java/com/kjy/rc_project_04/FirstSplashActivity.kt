@@ -5,16 +5,26 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import com.kjy.rc_project_04.databinding.ActivityFirstSplashBinding
+import splitties.activities.start
 
 class FirstSplashActivity : AppCompatActivity() {
+
+    val binding by lazy {
+        ActivityFirstSplashBinding.inflate(layoutInflater)
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_first_splash)
+        setContentView(binding.root)
+
+
+        var lottieImage = binding.lottieAnimView
+
+        lottieImage.playAnimation()
 
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, SecondSplashActivity::class.java)
-            startActivity(intent)
+            start<SecondSplashActivity>()
             finish()
-        },1500)
+        },2000)
     }
 }
